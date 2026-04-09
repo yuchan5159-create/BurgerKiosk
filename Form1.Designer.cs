@@ -30,31 +30,31 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BurgerKiosk));
             LblAppName = new Label();
-            RaBu1 = new RadioButton();
-            RaBu2 = new RadioButton();
-            RaBu3 = new RadioButton();
+            RBOItaly = new RadioButton();
+            RBO2 = new RadioButton();
+            RBO3 = new RadioButton();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            FF = new CheckBox();
-            OR = new CheckBox();
-            CS = new CheckBox();
-            GP = new CheckBox();
-            gpS = new GroupBox();
-            gpM = new GroupBox();
+            chkFF = new CheckBox();
+            chkOR = new CheckBox();
+            chkCS = new CheckBox();
+            chkGP = new CheckBox();
+            grpS = new GroupBox();
+            grpM = new GroupBox();
             groupBox3 = new GroupBox();
             groupBox4 = new GroupBox();
-            gpO = new GroupBox();
+            grpO = new GroupBox();
             cancle = new Button();
             order = new Button();
-            lpay = new Label();
-            pay = new ListBox();
+            lblp = new Label();
+            lstOrder = new ListBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            gpM.SuspendLayout();
+            grpM.SuspendLayout();
             groupBox3.SuspendLayout();
-            gpO.SuspendLayout();
+            grpO.SuspendLayout();
             SuspendLayout();
             // 
             // LblAppName
@@ -67,38 +67,38 @@
             LblAppName.TabIndex = 0;
             LblAppName.Text = "BURGERKING EXPRESS ORDER";
             // 
-            // RaBu1
+            // RBOItaly
             // 
-            RaBu1.AutoSize = true;
-            RaBu1.Location = new Point(35, 151);
-            RaBu1.Name = "RaBu1";
-            RaBu1.Size = new Size(169, 24);
-            RaBu1.TabIndex = 1;
-            RaBu1.TabStop = true;
-            RaBu1.Text = "이탈리안 살사베르데";
-            RaBu1.UseVisualStyleBackColor = true;
+            RBOItaly.AutoSize = true;
+            RBOItaly.Location = new Point(35, 151);
+            RBOItaly.Name = "RBOItaly";
+            RBOItaly.Size = new Size(169, 24);
+            RBOItaly.TabIndex = 1;
+            RBOItaly.TabStop = true;
+            RBOItaly.Text = "이탈리안 살사베르데";
+            RBOItaly.UseVisualStyleBackColor = true;
             // 
-            // RaBu2
+            // RBO2
             // 
-            RaBu2.AutoSize = true;
-            RaBu2.Location = new Point(35, 230);
-            RaBu2.Name = "RaBu2";
-            RaBu2.Size = new Size(120, 24);
-            RaBu2.TabIndex = 2;
-            RaBu2.TabStop = true;
-            RaBu2.Text = "통새우　와퍼";
-            RaBu2.UseVisualStyleBackColor = true;
+            RBO2.AutoSize = true;
+            RBO2.Location = new Point(35, 230);
+            RBO2.Name = "RBO2";
+            RBO2.Size = new Size(120, 24);
+            RBO2.TabIndex = 2;
+            RBO2.TabStop = true;
+            RBO2.Text = "통새우　와퍼";
+            RBO2.UseVisualStyleBackColor = true;
             // 
-            // RaBu3
+            // RBO3
             // 
-            RaBu3.AutoSize = true;
-            RaBu3.Location = new Point(35, 313);
-            RaBu3.Name = "RaBu3";
-            RaBu3.Size = new Size(135, 24);
-            RaBu3.TabIndex = 3;
-            RaBu3.TabStop = true;
-            RaBu3.Text = "비프불고기버거";
-            RaBu3.UseVisualStyleBackColor = true;
+            RBO3.AutoSize = true;
+            RBO3.Location = new Point(35, 313);
+            RBO3.Name = "RBO3";
+            RBO3.Size = new Size(135, 24);
+            RBO3.TabIndex = 3;
+            RBO3.TabStop = true;
+            RBO3.Text = "비프불고기버거";
+            RBO3.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -130,65 +130,71 @@
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
             // 
-            // FF
+            // chkFF
             // 
-            FF.AutoSize = true;
-            FF.Location = new Point(394, 170);
-            FF.Name = "FF";
-            FF.Size = new Size(125, 24);
-            FF.TabIndex = 7;
-            FF.Text = "프렌치 프라이";
-            FF.ThreeState = true;
-            FF.UseVisualStyleBackColor = true;
+            chkFF.AutoSize = true;
+            chkFF.Location = new Point(394, 170);
+            chkFF.Name = "chkFF";
+            chkFF.Size = new Size(125, 24);
+            chkFF.TabIndex = 7;
+            chkFF.Text = "프렌치 프라이";
+            chkFF.ThreeState = true;
+            chkFF.UseVisualStyleBackColor = true;
             // 
-            // OR
+            // chkOR
             // 
-            OR.AutoSize = true;
-            OR.Location = new Point(394, 212);
-            OR.Name = "OR";
-            OR.Size = new Size(91, 24);
-            OR.TabIndex = 8;
-            OR.Text = "어니언링";
-            OR.UseVisualStyleBackColor = true;
+            chkOR.AutoSize = true;
+            chkOR.Location = new Point(394, 212);
+            chkOR.Name = "chkOR";
+            chkOR.Size = new Size(91, 24);
+            chkOR.TabIndex = 8;
+            chkOR.Text = "어니언링";
+            chkOR.UseVisualStyleBackColor = true;
             // 
-            // CS
+            // chkCS
             // 
-            CS.AutoSize = true;
-            CS.Location = new Point(395, 262);
-            CS.Name = "CS";
-            CS.Size = new Size(91, 24);
-            CS.TabIndex = 9;
-            CS.Text = "치즈스틱";
-            CS.UseVisualStyleBackColor = true;
+            chkCS.AutoSize = true;
+            chkCS.Location = new Point(395, 262);
+            chkCS.Name = "chkCS";
+            chkCS.Size = new Size(91, 24);
+            chkCS.TabIndex = 9;
+            chkCS.Text = "치즈스틱";
+            chkCS.UseVisualStyleBackColor = true;
             // 
-            // GP
+            // chkGP
             // 
-            GP.AutoSize = true;
-            GP.Location = new Point(395, 313);
-            GP.Name = "GP";
-            GP.Size = new Size(110, 24);
-            GP.TabIndex = 10;
-            GP.Text = "고구마 파이";
-            GP.UseVisualStyleBackColor = true;
+            chkGP.AutoSize = true;
+            chkGP.Location = new Point(395, 313);
+            chkGP.Name = "chkGP";
+            chkGP.Size = new Size(110, 24);
+            chkGP.TabIndex = 10;
+            chkGP.Text = "고구마 파이";
+            chkGP.UseVisualStyleBackColor = true;
             // 
-            // gpS
+            // grpS
             // 
-            gpS.Location = new Point(378, 110);
-            gpS.Name = "gpS";
-            gpS.Size = new Size(160, 289);
-            gpS.TabIndex = 15;
-            gpS.TabStop = false;
-            gpS.Text = "사이드 선택";
+            grpS.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpS.Location = new Point(378, 110);
+            grpS.Name = "grpS";
+            grpS.Size = new Size(160, 289);
+            grpS.TabIndex = 15;
+            grpS.TabStop = false;
+            grpS.Text = "사이드 선택";
             // 
-            // gpM
+            // grpM
             // 
-            gpM.Controls.Add(groupBox3);
-            gpM.Location = new Point(12, 87);
-            gpM.Name = "gpM";
-            gpM.Size = new Size(360, 318);
-            gpM.TabIndex = 16;
-            gpM.TabStop = false;
-            gpM.Text = "메뉴 선택";
+            grpM.BackgroundImage = (Image)resources.GetObject("grpM.BackgroundImage");
+            grpM.Controls.Add(groupBox3);
+            grpM.FlatStyle = FlatStyle.System;
+            grpM.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpM.ForeColor = Color.Red;
+            grpM.Location = new Point(12, 87);
+            grpM.Name = "grpM";
+            grpM.Size = new Size(360, 318);
+            grpM.TabIndex = 16;
+            grpM.TabStop = false;
+            grpM.Text = "메뉴 선택";
+            grpM.Enter += gpM_Enter;
             // 
             // groupBox3
             // 
@@ -209,87 +215,95 @@
             groupBox4.TabStop = false;
             groupBox4.Text = "groupBox4";
             // 
-            // gpO
+            // grpO
             // 
-            gpO.Controls.Add(cancle);
-            gpO.Controls.Add(order);
-            gpO.Controls.Add(lpay);
-            gpO.Controls.Add(pay);
-            gpO.Location = new Point(559, 81);
-            gpO.Name = "gpO";
-            gpO.Size = new Size(212, 324);
-            gpO.TabIndex = 17;
-            gpO.TabStop = false;
-            gpO.Text = "주문 내역";
+            grpO.Controls.Add(cancle);
+            grpO.Controls.Add(order);
+            grpO.Controls.Add(lblp);
+            grpO.Controls.Add(lstOrder);
+            grpO.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            grpO.Location = new Point(544, 81);
+            grpO.Name = "grpO";
+            grpO.Size = new Size(227, 324);
+            grpO.TabIndex = 17;
+            grpO.TabStop = false;
+            grpO.Text = "주문 내역";
             // 
             // cancle
             // 
             cancle.BackColor = Color.Red;
+            cancle.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             cancle.ForeColor = Color.Transparent;
-            cancle.Location = new Point(106, 226);
+            cancle.Location = new Point(9, 278);
             cancle.Name = "cancle";
-            cancle.Size = new Size(94, 29);
+            cancle.Size = new Size(148, 46);
             cancle.TabIndex = 21;
             cancle.Text = "초기화";
             cancle.UseVisualStyleBackColor = false;
+            cancle.Click += cancle_Click;
             // 
             // order
             // 
             order.BackColor = Color.LimeGreen;
+            order.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             order.ForeColor = Color.Transparent;
-            order.Location = new Point(6, 226);
+            order.Location = new Point(9, 232);
             order.Name = "order";
-            order.Size = new Size(94, 29);
+            order.Size = new Size(148, 46);
             order.TabIndex = 20;
             order.Text = "주문하기";
             order.UseVisualStyleBackColor = false;
+            order.Click += order_Click;
             // 
-            // lpay
+            // lblp
             // 
-            lpay.AutoSize = true;
-            lpay.Location = new Point(19, 174);
-            lpay.Name = "lpay";
-            lpay.Size = new Size(50, 20);
-            lpay.TabIndex = 19;
-            lpay.Text = "label2";
+            lblp.AutoSize = true;
+            lblp.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblp.ForeColor = Color.Blue;
+            lblp.Location = new Point(0, 181);
+            lblp.Name = "lblp";
+            lblp.Size = new Size(169, 38);
+            lblp.TabIndex = 19;
+            lblp.Text = "총 금액: 0원";
             // 
-            // pay
+            // lstOrder
             // 
-            pay.FormattingEnabled = true;
-            pay.Location = new Point(0, 26);
-            pay.Name = "pay";
-            pay.Size = new Size(194, 124);
-            pay.TabIndex = 18;
+            lstOrder.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lstOrder.FormattingEnabled = true;
+            lstOrder.Location = new Point(15, 37);
+            lstOrder.Name = "lstOrder";
+            lstOrder.Size = new Size(194, 96);
+            lstOrder.TabIndex = 18;
             // 
             // BurgerKiosk
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(846, 462);
-            Controls.Add(gpO);
-            Controls.Add(GP);
-            Controls.Add(CS);
-            Controls.Add(OR);
-            Controls.Add(FF);
+            Controls.Add(grpO);
+            Controls.Add(chkGP);
+            Controls.Add(chkCS);
+            Controls.Add(chkOR);
+            Controls.Add(chkFF);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(RaBu3);
-            Controls.Add(RaBu2);
-            Controls.Add(RaBu1);
+            Controls.Add(RBO3);
+            Controls.Add(RBO2);
+            Controls.Add(RBOItaly);
             Controls.Add(LblAppName);
-            Controls.Add(gpS);
-            Controls.Add(gpM);
+            Controls.Add(grpS);
+            Controls.Add(grpM);
             Name = "BurgerKiosk";
             Text = "BurgerKiosk v1.0";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            gpM.ResumeLayout(false);
+            grpM.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
-            gpO.ResumeLayout(false);
-            gpO.PerformLayout();
+            grpO.ResumeLayout(false);
+            grpO.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -297,24 +311,24 @@
         #endregion
 
         private Label LblAppName;
-        private RadioButton RaBu1;
-        private RadioButton RaBu2;
-        private RadioButton RaBu3;
+        private RadioButton RBOItaly;
+        private RadioButton RBO2;
+        private RadioButton RBO3;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private CheckBox FF;
-        private CheckBox OR;
-        private CheckBox CS;
-        private CheckBox GP;
-        private GroupBox gpS;
-        private GroupBox gpM;
+        private CheckBox chkFF;
+        private CheckBox chkOR;
+        private CheckBox chkCS;
+        private CheckBox chkGP;
+        private GroupBox grpS;
+        private GroupBox grpM;
         private GroupBox groupBox3;
         private GroupBox groupBox4;
-        private GroupBox gpO;
+        private GroupBox grpO;
         private Button cancle;
         private Button order;
-        private Label lpay;
-        private ListBox pay;
+        private Label lblp;
+        private ListBox lstOrder;
     }
 }
