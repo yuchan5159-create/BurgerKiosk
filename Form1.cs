@@ -130,6 +130,8 @@ namespace BurgerKiosk
             }
 
             MessageBox.Show("주문이 완료되었습니다!\n" + lblp.Text, "주문 완료");
+
+
         }
     }
 }
