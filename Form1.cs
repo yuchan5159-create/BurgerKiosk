@@ -99,7 +99,7 @@ namespace BurgerKiosk
 
             lblerror.Visible = false;
             totalcost = 0;
-            lstOrder.Items.Clear();
+            lstOrder.Items.Clear();  
 
             if (RBOItaly.Checked) { totalcost += 5000; lstOrder.Items.Add("이탈리안 살사베르데 5,000원"); }
             else if (RBO2.Checked) { totalcost += 4000; lstOrder.Items.Add("통새우 와퍼 4,000원"); }
