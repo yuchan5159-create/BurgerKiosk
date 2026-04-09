@@ -45,6 +45,7 @@
             groupBox3 = new GroupBox();
             groupBox4 = new GroupBox();
             grpO = new GroupBox();
+            lblerror = new Label();
             cancle = new Button();
             order = new Button();
             lblp = new Label();
@@ -64,7 +65,7 @@
             LblAppName.Location = new Point(4, 9);
             LblAppName.Name = "LblAppName";
             LblAppName.Size = new Size(658, 62);
-            LblAppName.TabIndex = 0;
+            LblAppName.TabIndex = 1;
             LblAppName.Text = "BURGERKING EXPRESS ORDER";
             // 
             // RBOItaly
@@ -73,8 +74,8 @@
             RBOItaly.Location = new Point(35, 151);
             RBOItaly.Name = "RBOItaly";
             RBOItaly.Size = new Size(169, 24);
-            RBOItaly.TabIndex = 1;
-            RBOItaly.TabStop = true;
+            RBOItaly.TabIndex = 2;
+            RBOItaly.TabStop = false;
             RBOItaly.Text = "이탈리안 살사베르데";
             RBOItaly.UseVisualStyleBackColor = true;
             // 
@@ -84,8 +85,8 @@
             RBO2.Location = new Point(35, 230);
             RBO2.Name = "RBO2";
             RBO2.Size = new Size(120, 24);
-            RBO2.TabIndex = 2;
-            RBO2.TabStop = true;
+            RBO2.TabIndex = 3;
+            RBO2.TabStop = false;
             RBO2.Text = "통새우　와퍼";
             RBO2.UseVisualStyleBackColor = true;
             // 
@@ -95,8 +96,8 @@
             RBO3.Location = new Point(35, 313);
             RBO3.Name = "RBO3";
             RBO3.Size = new Size(135, 24);
-            RBO3.TabIndex = 3;
-            RBO3.TabStop = true;
+            RBO3.TabIndex = 4;
+            RBO3.TabStop = false;
             RBO3.Text = "비프불고기버거";
             RBO3.UseVisualStyleBackColor = true;
             // 
@@ -136,7 +137,7 @@
             chkFF.Location = new Point(394, 170);
             chkFF.Name = "chkFF";
             chkFF.Size = new Size(125, 24);
-            chkFF.TabIndex = 7;
+            chkFF.TabIndex = 5;
             chkFF.Text = "프렌치 프라이";
             chkFF.ThreeState = true;
             chkFF.UseVisualStyleBackColor = true;
@@ -147,7 +148,7 @@
             chkOR.Location = new Point(394, 212);
             chkOR.Name = "chkOR";
             chkOR.Size = new Size(91, 24);
-            chkOR.TabIndex = 8;
+            chkOR.TabIndex = 6;
             chkOR.Text = "어니언링";
             chkOR.UseVisualStyleBackColor = true;
             // 
@@ -157,7 +158,7 @@
             chkCS.Location = new Point(395, 262);
             chkCS.Name = "chkCS";
             chkCS.Size = new Size(91, 24);
-            chkCS.TabIndex = 9;
+            chkCS.TabIndex = 7;
             chkCS.Text = "치즈스틱";
             chkCS.UseVisualStyleBackColor = true;
             // 
@@ -167,7 +168,7 @@
             chkGP.Location = new Point(395, 313);
             chkGP.Name = "chkGP";
             chkGP.Size = new Size(110, 24);
-            chkGP.TabIndex = 10;
+            chkGP.TabIndex = 8;
             chkGP.Text = "고구마 파이";
             chkGP.UseVisualStyleBackColor = true;
             // 
@@ -217,6 +218,7 @@
             // 
             // grpO
             // 
+            grpO.Controls.Add(lblerror);
             grpO.Controls.Add(cancle);
             grpO.Controls.Add(order);
             grpO.Controls.Add(lblp);
@@ -228,6 +230,17 @@
             grpO.TabIndex = 17;
             grpO.TabStop = false;
             grpO.Text = "주문 내역";
+            // 
+            // lblerror
+            // 
+            lblerror.AutoSize = true;
+            lblerror.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblerror.ForeColor = Color.Red;
+            lblerror.Location = new Point(5, 149);
+            lblerror.Name = "lblerror";
+            lblerror.Size = new Size(229, 23);
+            lblerror.TabIndex = 19;
+            lblerror.Text = "상품이 선택되지 않았습니다.";
             // 
             // cancle
             // 
@@ -273,7 +286,7 @@
             lstOrder.Location = new Point(15, 37);
             lstOrder.Name = "lstOrder";
             lstOrder.Size = new Size(194, 96);
-            lstOrder.TabIndex = 18;
+            lstOrder.TabIndex = 4;
             // 
             // BurgerKiosk
             // 
@@ -330,5 +343,6 @@
         private Button order;
         private Label lblp;
         private ListBox lstOrder;
+        private Label lblerror;
     }
 }

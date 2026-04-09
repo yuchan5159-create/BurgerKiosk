@@ -14,6 +14,10 @@ namespace BurgerKiosk
             groupBox3.SendToBack();
             groupBox4.SendToBack();
 
+            RBOItaly.Checked = false;
+            RBO2.Checked = false;
+            RBO3.Checked = false;
+            lblerror.Visible = false;
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
@@ -44,10 +48,11 @@ namespace BurgerKiosk
         {
             if (!RBOItaly.Checked && !RBO2.Checked && !RBO3.Checked)
             {
-                MessageBox.Show("메뉴를 선택하세요.");
+                lblerror.Visible = true;
                 return;
             }
 
+            lblerror.Visible = false;
             totalcost = 0;
             lstOrder.Items.Clear();
 
