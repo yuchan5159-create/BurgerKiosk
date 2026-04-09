@@ -7,18 +7,63 @@ namespace BurgerKiosk
             InitializeComponent();
         }
             public int totalcost = 0;
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            grpS.SendToBack();  
-            grpM.SendToBack();
-            groupBox3.SendToBack();
-            groupBox4.SendToBack();
 
-            RBOItaly.Checked = false;
-            RBO2.Checked = false;
-            RBO3.Checked = false;
-            lblerror.Visible = false;
-        }
+            // 모든 선택 가능한 컨트롤 목록 (Tab 이동 순서)
+            private Control[] allItems = null!;
+            private int currentIndex = 0;
+
+            private void Form1_Load(object sender, EventArgs e)
+            {
+                grpS.SendToBack();
+                grpM.SendToBack();
+                groupBox3.SendToBack();
+                groupBox4.SendToBack();
+
+                RBOItaly.Checked = false;
+                RBO2.Checked = false;
+                RBO3.Checked = false;
+                lblerror.Visible = false;
+
+                // Tab/방향키로 이동할 컨트롤 순서 정의
+                allItems = [RBOItaly, RBO2, RBO3, chkFF, chkOR, chkCS, chkGP, order, cancle];
+                currentIndex = 0;
+                allItems[currentIndex].Focus();
+            }
+
+            protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+            {
+                switch (keyData)
+                {
+                    case Keys.Tab:
+                    case Keys.Down:
+                        // 다음 항목으로 이동
+                        currentIndex = (currentIndex + 1) % allItems.Length;
+                        allItems[currentIndex].Focus();
+                        return true;
+
+                    case Keys.Shift | Keys.Tab:
+                    case Keys.Up:
+                        // 이전 항목으로 이동
+                        currentIndex = (currentIndex - 1 + allItems.Length) % allItems.Length;
+                        allItems[currentIndex].Focus();
+                        return true;
+
+                    case Keys.Space:
+                        // 현재 항목 선택/토글
+                        if (allItems[currentIndex] is RadioButton rb)
+                            rb.Checked = true;
+                        else if (allItems[currentIndex] is CheckBox chk)
+                            chk.Checked = !chk.Checked;
+                        return true;
+
+                    case Keys.Enter:
+                        // Enter는 항상 주문하기
+                        order.PerformClick();
+                        return true;
+                }
+
+                return base.ProcessCmdKey(ref msg, keyData);
+            }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {

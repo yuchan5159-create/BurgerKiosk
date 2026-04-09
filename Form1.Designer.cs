@@ -74,7 +74,7 @@
             RBOItaly.Location = new Point(35, 151);
             RBOItaly.Name = "RBOItaly";
             RBOItaly.Size = new Size(169, 24);
-            RBOItaly.TabIndex = 2;
+            RBOItaly.TabIndex = 1;
             RBOItaly.TabStop = false;
             RBOItaly.Text = "이탈리안 살사베르데";
             RBOItaly.UseVisualStyleBackColor = true;
@@ -85,7 +85,7 @@
             RBO2.Location = new Point(35, 230);
             RBO2.Name = "RBO2";
             RBO2.Size = new Size(120, 24);
-            RBO2.TabIndex = 3;
+            RBO2.TabIndex = 2;
             RBO2.TabStop = false;
             RBO2.Text = "통새우　와퍼";
             RBO2.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@
             RBO3.Location = new Point(35, 313);
             RBO3.Name = "RBO3";
             RBO3.Size = new Size(135, 24);
-            RBO3.TabIndex = 4;
+            RBO3.TabIndex = 3;
             RBO3.TabStop = false;
             RBO3.Text = "비프불고기버거";
             RBO3.UseVisualStyleBackColor = true;
@@ -137,7 +137,7 @@
             chkFF.Location = new Point(394, 170);
             chkFF.Name = "chkFF";
             chkFF.Size = new Size(125, 24);
-            chkFF.TabIndex = 5;
+            chkFF.TabIndex = 4;
             chkFF.Text = "프렌치 프라이";
             chkFF.ThreeState = true;
             chkFF.UseVisualStyleBackColor = true;
@@ -148,7 +148,7 @@
             chkOR.Location = new Point(394, 212);
             chkOR.Name = "chkOR";
             chkOR.Size = new Size(91, 24);
-            chkOR.TabIndex = 6;
+            chkOR.TabIndex = 5;
             chkOR.Text = "어니언링";
             chkOR.UseVisualStyleBackColor = true;
             // 
@@ -158,7 +158,7 @@
             chkCS.Location = new Point(395, 262);
             chkCS.Name = "chkCS";
             chkCS.Size = new Size(91, 24);
-            chkCS.TabIndex = 7;
+            chkCS.TabIndex = 6;
             chkCS.Text = "치즈스틱";
             chkCS.UseVisualStyleBackColor = true;
             // 
@@ -168,7 +168,7 @@
             chkGP.Location = new Point(395, 313);
             chkGP.Name = "chkGP";
             chkGP.Size = new Size(110, 24);
-            chkGP.TabIndex = 8;
+            chkGP.TabIndex = 7;
             chkGP.Text = "고구마 파이";
             chkGP.UseVisualStyleBackColor = true;
             // 
@@ -227,7 +227,7 @@
             grpO.Location = new Point(544, 81);
             grpO.Name = "grpO";
             grpO.Size = new Size(227, 324);
-            grpO.TabIndex = 17;
+            grpO.TabIndex = 8;
             grpO.TabStop = false;
             grpO.Text = "주문 내역";
             // 
@@ -250,7 +250,7 @@
             cancle.Location = new Point(9, 278);
             cancle.Name = "cancle";
             cancle.Size = new Size(148, 46);
-            cancle.TabIndex = 21;
+            cancle.TabIndex = 2;
             cancle.Text = "초기화";
             cancle.UseVisualStyleBackColor = false;
             cancle.Click += cancle_Click;
@@ -263,7 +263,7 @@
             order.Location = new Point(9, 232);
             order.Name = "order";
             order.Size = new Size(148, 46);
-            order.TabIndex = 20;
+            order.TabIndex = 1;
             order.Text = "주문하기";
             order.UseVisualStyleBackColor = false;
             order.Click += order_Click;
@@ -286,7 +286,8 @@
             lstOrder.Location = new Point(15, 37);
             lstOrder.Name = "lstOrder";
             lstOrder.Size = new Size(194, 96);
-            lstOrder.TabIndex = 4;
+            lstOrder.TabIndex = 0;
+            lstOrder.TabStop = false;
             // 
             // BurgerKiosk
             // 
@@ -308,6 +309,7 @@
             Controls.Add(grpS);
             Controls.Add(grpM);
             Name = "BurgerKiosk";
+            AcceptButton = order;
             Text = "BurgerKiosk v1.0";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
