@@ -24,10 +24,42 @@ namespace BurgerKiosk
                 RBO3.Checked = false;
                 lblerror.Visible = false;
 
+                // 선택 변경 시 즉시 업데이트
+                RBOItaly.CheckedChanged += Item_CheckedChanged;
+                RBO2.CheckedChanged += Item_CheckedChanged;
+                RBO3.CheckedChanged += Item_CheckedChanged;
+                chkFF.CheckedChanged += Item_CheckedChanged;
+                chkOR.CheckedChanged += Item_CheckedChanged;
+                chkCS.CheckedChanged += Item_CheckedChanged;
+                chkGP.CheckedChanged += Item_CheckedChanged;
+
                 // Tab/방향키로 이동할 컨트롤 순서 정의
                 allItems = [RBOItaly, RBO2, RBO3, chkFF, chkOR, chkCS, chkGP, order, cancle];
                 currentIndex = 0;
                 allItems[currentIndex].Focus();
+            }
+
+            private void Item_CheckedChanged(object? sender, EventArgs e)
+            {
+                UpdateOrder();
+            }
+
+            private void UpdateOrder()
+            {
+                totalcost = 0;
+                lstOrder.Items.Clear();
+
+                if (RBOItaly.Checked) { totalcost += 5000; lstOrder.Items.Add("이탈리안 살사베르데 5,000원"); }
+                else if (RBO2.Checked) { totalcost += 4000; lstOrder.Items.Add("통새우 와퍼 4,000원"); }
+                else if (RBO3.Checked) { totalcost += 3000; lstOrder.Items.Add("비프불고기버거 3,000원"); }
+
+                if (chkFF.Checked) { totalcost += 3500; lstOrder.Items.Add("프렌치 프라이 3,500원"); }
+                if (chkOR.Checked) { totalcost += 2500; lstOrder.Items.Add("어니언링 2,500원"); }
+                if (chkCS.Checked) { totalcost += 1500; lstOrder.Items.Add("치즈스틱 1,500원"); }
+                if (chkGP.Checked) { totalcost += 500; lstOrder.Items.Add("고구마 파이 500원"); }
+
+                lblp.Text = "총 금액: " + totalcost.ToString("N0") + "원";
+                lblerror.Visible = false;
             }
 
             protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
@@ -97,20 +129,7 @@ namespace BurgerKiosk
                 return;
             }
 
-            lblerror.Visible = false;
-            totalcost = 0;
-            lstOrder.Items.Clear();  
-
-            if (RBOItaly.Checked) { totalcost += 5000; lstOrder.Items.Add("이탈리안 살사베르데 5,000원"); }
-            else if (RBO2.Checked) { totalcost += 4000; lstOrder.Items.Add("통새우 와퍼 4,000원"); }
-            else if (RBO3.Checked) { totalcost += 3000; lstOrder.Items.Add("비프불고기버거 3,000원"); }
-
-            if (chkFF.Checked) { totalcost += 3500; lstOrder.Items.Add("프렌치 프라이 3,500원"); }
-            if (chkOR.Checked) { totalcost += 2500; lstOrder.Items.Add("어니언링 2,500원"); }
-            if (chkCS.Checked) { totalcost += 1500; lstOrder.Items.Add("치즈스틱 1,500원"); }
-            if (chkGP.Checked) { totalcost += 500; lstOrder.Items.Add("고구마 파이 500원"); }
-
-            lblp.Text = "총 금액: " + totalcost.ToString("N0") + "원";
+            MessageBox.Show("주문이 완료되었습니다!\n" + lblp.Text, "주문 완료");
         }
     }
 }
